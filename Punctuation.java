@@ -165,6 +165,6 @@ public class Punctuation
 
   public void printWords(String words)
   {
-    System.out.print(words);          // This will print each indivisual words. 
+    System.out.print("\n\n\n" + words + "\n\n\n");          // This will print each indivisual words. 
   }
 }
