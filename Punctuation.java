@@ -6,144 +6,165 @@
 
 public class Punctuation
 {
-	public Punctuation()
-	{
-	}
-    
-	public static void main(String[] args)
-	{
-    	String textGiven = new String("");                                          // D&I textGiven
-    	textGiven = "Blood, Sweat, and Tears by Winston Churchill " +
-        	"May 13, 1940" +
-        	"Mr. Speaker: " +
-        	"On Friday evening last I received His Majesty’s commission to form a" +
-        	"new " +
-        	"Administration. It was the evident wish and will of Parliament and the " +
-        	"nation that this should be conceived on the broadest possible basis and that it should " +
-        	"include all parties, both those who supported the late Government and also the parties " +
-        	"of the Opposition. " +
-        	"I have completed the most important part of this task. A War Cabinet has " +
-        	"been formed of five Members, representing, with the Liberal Opposition, the unity of the " +
-        	"nation. The three party Leaders have agreed to serve, either in the War Cabinet or in " +
-        	"high executive office. The three Fighting Services have been filled. It was necessary " +
-        	"that this should be done in one single day, on account of the extreme urgency and " +
-        	"rigour of events. A number of other key positions were filled yesterday, and I am " +
-        	"submitting a further list to His Majesty tonight. I hope to complete the appointment of the " +
-        	"principal Ministers during tomorrow. The appointment of the other Ministers usually " +
-        	"takes a little longer, but I trust that, when Parliament meets again, this part of my task " +
-        	"will be completed, and that the Administration will be complete in all respects. " +
-        	"Sir, I considered it in the public interest to suggest that the House should " +
-        	"be summoned to meet today. Mr. Speaker agreed and took the necessary steps, in " +
-        	"accordance with the powers conferred upon him by the Resolution of the House. At the " +
-        	"end of the proceedings today, the Adjournment of the House will be proposed until " +
-        	"Tuesday, the 21st May, with, of course, provision for earlier meeting, if need be. The " +
-        	"business to be considered during that week will be notified to Members at the earliest " +
-        	"opportunity. I now invite the House, by the Resolution which stands in my name, to " +
-        	"record its approval of the steps taken and to declare its confidence in the new " +
-        	"Government. " +
-        	"Sir, to form an Administration of this scale and complexity is a serious " +
-        	"undertaking in itself, but it must be remembered that we are in the preliminary stage of " +
-        	"one of the greatest battles in history, that we are in action at many points in Norway and " +
-        	"in Holland, that we have to be prepared in the Mediterranean, that the air battle is " +
-        	"continuous and that many preparations have to be made here at home. In this crisis I " +
-        	"hope I may be pardoned if I do not address the House at any length today. I hope that " +
-        	"any of my friends and colleagues, or former colleagues, who are affected by the political " +
-        	"reconstruction, will make all allowances for any lack of ceremony with which it has been " +
-        	"necessary to act. I would say to the House, as I said to those who’ve joined this " +
-        	"government: \"I have nothing to offer but blood, toil, tears and sweat.\" " +
-        	"We have before us an ordeal of the most grievous kind. We have before " +
-        	"us many, many long months of struggle and of suffering. You ask, what is our policy? I " +
-        	"will say: It is to wage war, by sea, land and air, with all our might and with all the " +
-        	"strength that God can give us; to wage war against a monstrous tyranny, never " +
-        	"surpassed in the dark and lamentable catalogue of human crime. That is our policy. You " +
-        	"ask, what is our aim? I can answer in one word: victory. Victory at all costs, victory in " +
-        	"spite of all terror, victory, however long and hard the road may be; for without victory, " +
-        	"there is no survival. Let that be realised; no survival for the British Empire, no survival " +
-        	"for all that the British Empire has stood for, no survival for the urge and impulse of the " +
-        	"ages, that mankind will move forward towards its goal. " +
-        	"But I take up my task with buoyancy and hope. I feel sure that our cause " +
-        	"will not be suffered to fail among men. At this time I feel entitled to claim the aid of all, " +
-        	"and I say, \"Come then, let us go forward together with our united strength.\"";
-    	Punctuation pctn = new Punctuation();                 // make new instance 
-    	pctn.searchIt(textGiven);
-	}
-    
-	public void searchIt(String textGiven)
-	{
-    	String punctuationWords = new String("");
-    	punctuationWords = textGiven;
-    	getPunctuationWords(textGiven);               // call the method
-    	printWords(punctuationWords);                 // calls the method
-	}
-    
-	public String getPunctuationWords(String textGiven)
-	{
-    	String wordRead = new String("");
-    	String result = new String("");
-   	 
-    	for(int counts = 0; counts<textGiven.length(); counts++)    // for loop 
-    	{
-        	char c = textGiven.charAt(counts);
-       	 
-        	if (c == ' ' )
-        	{
-           	 if (checkForPunctuation(wordRead))
-           	{
-           	  result = result.concat(wordRead+" "); 
-           	}
-           	wordRead = ""; 
-        	}
-        	
-        	else 
-        	{
-        	  wordRead +=c; 
-        	}
-    	}
-    	
-    	if (checkForPunctuation(wordRead))
-    	{
-    	  result = result.concat(wordRead);       // adds each result to the next 
-    	}
-    	return result; 
-	}
+  public Punctuation()
+  {
+  }
 
-	public boolean checkForPunctuation(String word)
-	{
-	  String punctuations = new String(".,;:!?\"'()-");
-	  
-	  for (int i  = 0; i<word.length(); i++)
-	  {
-	    char c = word.charAt(i);                // plug in the index where the character of the value of i is at
-	    if (punctuations.indexOf(c) != -1)
-	    {
-	      return true; 
-	    }
-	  }
-	  return false; 
-	}    
-    
-	public void printWords(String words)
-	{
-	  String wordRead = new String(""); 
-	  
-	  for (int i = 0; i < words.length(); i++)
-	  {
-	    char c = words.charAt(i); 
-	    if (c == ' ')
-	    {
-	      System.out.print(wordRead);
+  public static void main(String[] args)
+  {
+     String textGiven = new String("");                                          // D&I textGiven
+     textGiven = "Blood, Sweat, and Tears by Winston Churchill " +
+         "May 13, 1940" +
+         "Mr. Speaker: " +
+         "On Friday evening last I received His Majesty’s commission to form a" +
+         "new " +
+         "Administration. It was the evident wish and will of Parliament and the " +
+         "nation that this should be conceived on the broadest possible basis and that it should " +
+         "include all parties, both those who supported the late Government and also the parties " +
+         "of the Opposition. " +
+         "I have completed the most important part of this task. A War Cabinet has " +
+         "been formed of five Members, representing, with the Liberal Opposition, the unity of the " +
+         "nation. The three party Leaders have agreed to serve, either in the War Cabinet or in " +
+         "high executive office. The three Fighting Services have been filled. It was necessary " +
+         "that this should be done in one single day, on account of the extreme urgency and " +
+         "rigour of events. A number of other key positions were filled yesterday, and I am " +
+         "submitting a further list to His Majesty tonight. I hope to complete the appointment of the " +
+         "principal Ministers during tomorrow. The appointment of the other Ministers usually " +
+         "takes a little longer, but I trust that, when Parliament meets again, this part of my task " +
+         "will be completed, and that the Administration will be complete in all respects. " +
+         "Sir, I considered it in the public interest to suggest that the House should " +
+         "be summoned to meet today. Mr. Speaker agreed and took the necessary steps, in " +
+         "accordance with the powers conferred upon him by the Resolution of the House. At the " +
+         "end of the proceedings today, the Adjournment of the House will be proposed until " +
+         "Tuesday, the 21st May, with, of course, provision for earlier meeting, if need be. The " +
+         "business to be considered during that week will be notified to Members at the earliest " +
+         "opportunity. I now invite the House, by the Resolution which stands in my name, to " +
+         "record its approval of the steps taken and to declare its confidence in the new " +
+         "Government. " +
+         "Sir, to form an Administration of this scale and complexity is a serious " +
+         "undertaking in itself, but it must be remembered that we are in the preliminary stage of " +
+         "one of the greatest battles in history, that we are in action at many points in Norway and " +
+         "in Holland, that we have to be prepared in the Mediterranean, that the air battle is " +
+         "continuous and that many preparations have to be made here at home. In this crisis I " +
+         "hope I may be pardoned if I do not address the House at any length today. I hope that " +
+         "any of my friends and colleagues, or former colleagues, who are affected by the political " +
+         "reconstruction, will make all allowances for any lack of ceremony with which it has been " +
+         "necessary to act. I would say to the House, as I said to those who’ve joined this " +
+         "government: \"I have nothing to offer but blood, toil, tears and sweat.\" " +
+         "We have before us an ordeal of the most grievous kind. We have before " +
+         "us many, many long months of struggle and of suffering. You ask, what is our policy? I " +
+         "will say: It is to wage war, by sea, land and air, with all our might and with all the " +
+         "strength that God can give us; to wage war against a monstrous tyranny, never " +
+         "surpassed in the dark and lamentable catalogue of human crime. That is our policy. You " +
+         "ask, what is our aim? I can answer in one word: victory. Victory at all costs, victory in " +
+         "spite of all terror, victory, however long and hard the road may be; for without victory, " +
+         "there is no survival. Let that be realised; no survival for the British Empire, no survival " +
+         "for all that the British Empire has stood for, no survival for the urge and impulse of the " +
+         "ages, that mankind will move forward towards its goal. " +
+         "But I take up my task with buoyancy and hope. I feel sure that our cause " +
+         "will not be suffered to fail among men. At this time I feel entitled to claim the aid of all, " +
+         "and I say, \"Come then, let us go forward together with our united strength.\"";
+     Punctuation pctn = new Punctuation();
+     pctn.searchIt(textGiven);
+  }
+
+  public void searchIt(String textGiven)
+  {
+    String punctuationWords = new String("");   
+    punctuationWords = getPunctuationWords(textGiven); 
+    printWords(punctuationWords);            
+  }
+  /*
+    It creates instance and calls for the method, printWords. It also plugs in the textGiven 
+    with getPunctuationWords and into punctuationWords. 
+  */
+
+  public String getPunctuationWords(String textGiven)
+  {
+    String wordRead = new String("");
+    String result = new String("");
+   
+    for(int counts = 0; counts<textGiven.length(); counts++)
+    {
+      char c = textGiven.charAt(counts);
+     
+      if (c == ' ' )
+      {
+        if (checkForPunctuation(wordRead))
+        {
+          wordRead = removePunctuation(wordRead);
+
+          result = result.concat(wordRead);
+        }
+        else
+        {
+          result = result.concat(wordRead+" ");
+        }
         wordRead = "";
-	    }
-	    
-	    else 
-	    {
-	      wordRead += c; 
-	    }
-	  }
-	  
-	  if (!wordRead.equals(""))
-	  {
-	    System.out.print(wordRead);
-	  }
-	}
+      }
+      else
+      {
+        wordRead +=c;
+      }
+    }
+
+    if (checkForPunctuation(wordRead))
+    {
+      wordRead = removePunctuation(wordRead);
+      result = result.concat(wordRead);    
+    }
+    return result;
+  }
+  /*
+    It recieves the variable, textGiven and uses the for loop to count the loop until it reaches 
+    the one less number as the length of the textGiven. The if else statements inside the loops 
+    checks if there is a space or not, and then it will concatinate result with the word it was 
+    checking, devided by the space. It happens after they have the variable wordRead gets recieved 
+    to the checkForPunctuation. 
+  */
+
+  public String removePunctuation(String word)
+  {
+    String punctuations = new String(".,;:!?\"'()-");
+    String sResult = new String("");
+
+    for (int i  = 0; i<word.length(); i++)
+    {
+      char c = word.charAt(i);                
+      if (punctuations.indexOf(c) == -1)
+      {
+        sResult += c;
+      }
+    }
+    sResult += " ";
+    return sResult;
+  } 
+  /*
+    this method recieves the variable word then it removes the punctuations from the given 
+    text by checking if the index of c will give an error or not. 
+  */
+
+  public boolean checkForPunctuation(String word)
+  {
+    String punctuations = new String(".,;:!?\"'()-");
+ 
+    for (int i  = 0; i<word.length(); i++)
+    {
+      char c = word.charAt(i);                
+      if (punctuations.indexOf(c) != -1)
+      {
+        return true;
+      }
+    }
+    return false;
+  }    
+  /*
+    This method declares and initiallizes the punctuations and checks if there are 
+    punctuations in the word that it recieved. 
+  */
+
+  public void printWords(String words)
+  {
+    System.out.print(words);          // This will print each indivisual words. 
+  }
 }
